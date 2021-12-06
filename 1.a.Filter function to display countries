@@ -9,3 +9,4 @@ xhr.onload = function () {
     console.log("Data is not available");
   }
 };
+xhr.send();
