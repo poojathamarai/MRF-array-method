@@ -1,0 +1,17 @@
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://restcountries.com/v2/all");
+xhr.onload = function () {
+  if (xhr.status >= 200 && xhr.status < 300) {
+    var t = JSON.parse(this.response);
+    t.forEach(element =>
+      {
+      console.log(`Name: ${element.name}`)
+      console.log(`Capital: ${element.capital}`)
+      console.log(`Flag: ${element.flag}`)
+    })
+  } else {
+    console.log("Data is not available");
+  }
+};
+
+xhr.send();
